@@ -1,0 +1,27 @@
+.container{
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    align-items: center;
+    position: relative;
+    width: 210px;
+    z-index: 1;
+    font-style: bold;
+}
+.letter {
+    color: #FFFFFF;
+    position: absolute;
+    top: 25%;
+    left: 7%;
+}
+
+
+.card {
+    width: 56px;
+  height: 56px;
+  background-color: #7B61FF;
+  border-radius: 10px;
+}

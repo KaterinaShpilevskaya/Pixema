@@ -1,0 +1,19 @@
+.container {
+    width: 123px;
+}
+ 
+.navButton {
+    display: flex;
+    margin-bottom: 40px;
+    text-decoration: none;
+    align-items: center;
+    font-size: 18px;
+    line-height: 24px;
+    color: #80858B;
+    gap: 25px;
+}
+
+.activeNavButton {
+    color: #7B61FF;
+}
+
