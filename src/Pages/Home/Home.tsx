@@ -1,7 +1,6 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import Header from "../../Components/Header";
-import NavBar from "../../Components/Categories";
+import CardsList from "../../Components/CardsList";
+import Categories from "../../Components/Categories";
 
 import styles from "./Home.module.css";
 
@@ -28,8 +27,9 @@ const Home = () => {
   return (
     <>
       <div className={styles.container}>
-        <NavBar />
-        <Outlet />
+        <Categories />
+        <CardsList cardsList={ MOCK_CARDS_LIST }  />
+       
       </div>
     </>
   );

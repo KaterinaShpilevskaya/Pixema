@@ -9,13 +9,12 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow: hidden;
+    overflow-x:hidden;
 }
 
 html {
-    flex: 1;
     height: 100%;
-    overflow: hidden;
+    overflow-x:hidden;
 }
 
 code {
@@ -24,6 +23,7 @@ code {
 }
 
 #root {
+    flex: 1;
     display: flex;
 }
 

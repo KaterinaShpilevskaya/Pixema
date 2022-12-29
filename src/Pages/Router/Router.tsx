@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../Home";
 import PagesWrapper from "../PagesWrapper";
+import SignIn from "../SignIn";
+import SignUp from "../SignUp";
 
 export enum PathNames {
   Home = "/",
@@ -23,7 +25,8 @@ const Router = () => {
           <Route path={PathNames.SignUp} element={<SignUp />} />
           <Route path={PathNames.RegistrationConfirmation} element={<RegistrationConfirmation />} /> */}
         </Route>
-        {/* <Route path="*" element={<Navigate to={PathNames.SignIn} />} /> */}
+        <Route path={PathNames.SignIn} element={<SignIn />} />
+        <Route path={PathNames.SignUp} element={<SignUp />} />
         </Routes>
     </BrowserRouter>
   );
