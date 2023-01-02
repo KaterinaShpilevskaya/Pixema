@@ -2,6 +2,7 @@ import React from "react";
 import CardsList from "../../Components/CardsList";
 import Categories from "../../Components/Categories";
 import OneCard from "../OneCard";
+import SettingsPage from "../SettingsPage";
 
 import styles from "./Home.module.css";
 
@@ -30,7 +31,8 @@ const Home = () => {
       <div className={styles.container}>
         <Categories />
         {/* <CardsList cardsList={ MOCK_CARDS_LIST }  /> */}
-        <OneCard />
+        {/* <OneCard /> */}
+        <SettingsPage />
        
       </div>
     </>
