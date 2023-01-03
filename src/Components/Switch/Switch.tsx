@@ -10,16 +10,13 @@ const Switch = () => {
 
   return (
     <div
-      className={classNames(styles.switcher, {
-        [styles.activeButton]: theme === Theme.Light,
-      })}
       onClick={() => onChangeTheme(Theme.Light)}
+      className={styles.switcher}
+      
     >
       <div
-        className={classNames(styles.circle, {
-          [styles.activeButton]: theme === Theme.Dark,
-        })}
-        onClick={() => onChangeTheme(Theme.Dark)}
+      onClick={() => onChangeTheme(Theme.Dark)}
+        className={styles.circle}
       ></div>
     </div>
   );

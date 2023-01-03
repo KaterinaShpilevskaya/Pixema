@@ -3,6 +3,7 @@ import CardsList from "../../Components/CardsList";
 import Categories from "../../Components/Categories";
 import OneCard from "../OneCard";
 import SettingsPage from "../SettingsPage";
+import SignIn from "../SignIn";
 
 import styles from "./Home.module.css";
 
@@ -32,7 +33,8 @@ const Home = () => {
         <Categories />
         {/* <CardsList cardsList={ MOCK_CARDS_LIST }  /> */}
         {/* <OneCard /> */}
-        <SettingsPage />
+       
+        
        
       </div>
     </>

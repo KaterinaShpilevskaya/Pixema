@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../Home";
 import PagesWrapper from "../PagesWrapper";
+import SettingsPage from "../SettingsPage";
 import SignIn from "../SignIn";
 import SignUp from "../SignUp";
 
@@ -21,6 +22,8 @@ const Router = () => {
     <Routes>
       <Route path={PathNames.Home} element={<PagesWrapper />}>
             <Route path={PathNames.Home} element={<Home />} />
+            <Route path={PathNames.Settings} element={ <SettingsPage />} />
+           
           {/* <Route path={PathNames.SignIn} element={<SignIn />} />
           <Route path={PathNames.SignUp} element={<SignUp />} />
           <Route path={PathNames.RegistrationConfirmation} element={<RegistrationConfirmation />} /> */}

@@ -9,6 +9,7 @@ import Input from '../../Components/Input';
 import styles from './SettingsPage.module.css';
 import classNames from 'classnames';
 import Switch from "../../Components/Switch";
+import Categories from "../../Components/Categories";
 
 
 const SettingsPage = () => {
@@ -21,7 +22,7 @@ const SettingsPage = () => {
    return (
       <>
       <div className={styles.container}>
-         
+         <Categories />
 
          <div className={styles.settings}>
             <div className={styles.settingsBlock}>
