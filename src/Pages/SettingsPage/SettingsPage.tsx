@@ -8,6 +8,7 @@ import Input from '../../Components/Input';
 
 import styles from './SettingsPage.module.css';
 import classNames from 'classnames';
+import Switch from "../../Components/Switch";
 
 
 const SettingsPage = () => {
@@ -75,8 +76,8 @@ const SettingsPage = () => {
                      <span className={styles.spanThema}>Use dark thema</span>
                   </div>
 
-                  {/* <Switch /> */}
-                  
+                  <Switch />
+
                </div>
             </div>
 

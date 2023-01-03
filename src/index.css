@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    background-color: #000000;
     margin: 0;
     display: flex;
     flex: 1;
@@ -13,6 +12,8 @@ body {
     overflow-x:hidden;
     height: 100%;
 }
+
+
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
