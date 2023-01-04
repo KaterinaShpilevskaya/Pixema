@@ -10,12 +10,12 @@ const Switch = () => {
 
   return (
     <div
-      onClick={() => onChangeTheme(Theme.Light)}
+      onClick={() => onChangeTheme(Theme.Dark)}
       className={styles.switcher}
       
     >
       <div
-      onClick={() => onChangeTheme(Theme.Dark)}
+      onClick={() => onChangeTheme(Theme.Light)}
         className={styles.circle}
       ></div>
     </div>

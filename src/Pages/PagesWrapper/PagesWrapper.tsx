@@ -9,6 +9,7 @@ import { Theme } from "../../Constants/@types";
 
 const PagesWrapper = () => {
     const {theme} = useThemeContext()
+    
     return (
         <div className={classNames(styles.container, {[styles.darkContainer] : theme === Theme.Dark})}>
             <Header />
