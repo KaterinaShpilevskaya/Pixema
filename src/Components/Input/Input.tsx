@@ -2,6 +2,8 @@ import React, { ChangeEvent, forwardRef } from "react";
 import classNames from "classnames";
 
 import styles from "./Input.module.css";
+import { useThemeContext } from "../../Context/Theme";
+import { Theme } from "../../Constants/@types";
 
 type InputProps = {
    value: string;
@@ -29,11 +31,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
    const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
       onChange(event.target.value);
    };
+   
+   const { theme } = useThemeContext();
 
    return (
     
       <div>
-         {title && <div className={styles.title}>{title}</div>}
+         {title && <div className={classNames(styles.title, {
+                    [styles.whiteTheme]: theme === Theme.Light,
+                   })}>{title}</div>}
             <input
                value={value}
                onChange={onChangeInput}

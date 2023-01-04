@@ -36,3 +36,12 @@
     pointer-events: none;
     color: #AFB2B6;
  }
+
+ .whiteTheme {
+   background-color: #ffffff;
+   color: black;
+ }
+
+ .whiteThemeBorder{
+   border: 2px solid #AFB2B6;
+}

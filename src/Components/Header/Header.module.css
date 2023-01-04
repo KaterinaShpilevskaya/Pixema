@@ -4,8 +4,10 @@
     display: flex;
     justify-content: space-between;
     padding-top: 40px;
+    align-items: center;
 }
 
 .logo {
-    margin-right: 40px;
+    display: flex;
+    justify-content: flex-start;
 }

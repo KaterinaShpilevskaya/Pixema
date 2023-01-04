@@ -49,3 +49,8 @@
     line-height: 24px;
     color: #FF5154;
  }
+
+ .whiteTheme {
+   background-color: #ffffff;
+   color: black;
+ }

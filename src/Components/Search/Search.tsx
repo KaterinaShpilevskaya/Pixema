@@ -5,6 +5,8 @@ import styles from './Search.module.css';
 
 import { SearchFilteredIcon } from '../../Assets/icons/SearchFilteredIcon';
 import { SearchIcon } from '../../Assets/icons/SearchIcon';
+import { useThemeContext } from "../../Context/Theme";
+import { Theme } from "../../Constants/@types";
 
 type SearchProps = {
    value: string;
@@ -24,11 +26,16 @@ const Search = forwardRef <HTMLInputElement, SearchProps> ((props, ref) => {
       className,
    } = props;
 
+   const { theme } = useThemeContext();
+
    return (
       <div className={styles.container}>
          <input
             placeholder="Search"
-            className={classNames(styles.input, { [styles.disabled]: disabled })}
+            className={classNames(styles.input, { [styles.disabled]: disabled, 
+               [styles.whiteTheme]: theme === Theme.Light,
+               [styles.whiteThemeBorder]: theme === Theme.Light })}
+            
          />
       {filters ? (
          <div className={styles.svg}><SearchFilteredIcon /></div>
