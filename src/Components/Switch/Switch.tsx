@@ -5,19 +5,29 @@ import { Theme } from "../../Constants/@types";
 
 import styles from "./Switch.module.css";
 
+const disabled = false;
+
 const Switch = () => {
   const { theme, onChangeTheme } = useThemeContext();
 
   return (
     <div
-      onClick={() => onChangeTheme(Theme.Dark)}
-      className={styles.switcher}
-      
+      onClick={() => {
+        if (theme === Theme.Light) {
+          onChangeTheme(Theme.Dark);
+        } else {
+          onChangeTheme(Theme.Light);
+        }
+      }}
+      className={classNames(styles.switcher,{ 
+        [styles.whiteSwitch]: theme === Theme.Light ,
+        [styles.disabledSwitch]: disabled,
+        
+    })}
     >
-      <div
-      onClick={() => onChangeTheme(Theme.Light)}
-        className={styles.circle}
-      ></div>
+      < div className={classNames(styles.circle,{ 
+          [styles.darkSwitch]: theme === Theme.Dark
+      })} />
     </div>
   );
 };

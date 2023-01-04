@@ -24,3 +24,23 @@
   transition: all 0.5s;
   cursor: pointer;
 }
+
+.darkSwitch {
+    left: 2px;
+    transition: all 0.5s;
+}
+
+.whiteSwitch {
+    background-color: #80858b;
+    transition: all 0.5s;
+}
+
+.SwitchOff:hover {
+    background-color: #afb2b6;
+    transition: all 0.5s;
+}
+
+.disabledSwitch {
+    opacity: 40%;
+    pointer-events: none;
+}
