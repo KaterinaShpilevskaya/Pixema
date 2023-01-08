@@ -9,7 +9,8 @@ const registerUser = (data: RegisterUserData) => {
 
 export default {
     registerUser
-}
+};
+
 
 
 
