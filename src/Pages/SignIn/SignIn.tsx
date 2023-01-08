@@ -5,6 +5,8 @@ import Input from "../../Components/Input";
 import Button, {ButtonTypes} from "../../Components/Button";
 
 import styles from "./SignIn.module.css";
+import { NavLink } from "react-router-dom";
+import { PathNames } from "../Router/Router";
 
 const SignIn = () => {
 
@@ -49,7 +51,7 @@ const SignIn = () => {
                 />
              
              <div className={styles.signContainer}>
-                {"Don’t have an account?"}{" "} <span className={styles.link}>{"Sign Up"}</span>
+                {"Don’t have an account?"}<NavLink to = { PathNames.SignUp } className={styles.link}>{"Sign Up"}</NavLink>
              </div>
              </>
           </FormContainer>

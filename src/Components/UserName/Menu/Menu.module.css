@@ -1,0 +1,43 @@
+.container{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    z-index: 1;
+ }
+ 
+ .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    
+ }
+ 
+ .editProfileButton {
+    border-radius: 10px 10px 0px 0px;
+ }
+ 
+ .logOutButton {
+    color: #7B61FF;
+    border-radius: 0px 0px 10px 10px;
+ }
+ 
+ .logOutButton:hover {
+    color: #917CFF;
+ }
+
+ .lighteditProfileButton {
+    background-color:  #d3d7dc;;
+    border-radius: 10px 10px 0px 0px ;
+    color: black;
+ }
+
+ .lighteditProfileButton:hover {
+    cursor: pointer !important;
+    color: #484b4e;
+ }
+
+ .lightContainerLogout {
+    background-color: blue;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #d3d7dc;
+ }

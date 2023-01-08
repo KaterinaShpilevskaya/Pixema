@@ -1,15 +1,15 @@
 import React from "react";
 
-export const SearchIcon = ({width="24", height="24"}) => {
+export const ArrowRightIcon = ({width="7", height="12"}) => {
    return (
       <svg
          width={width}
          height={height}
-         viewBox="0 0 24 24"
+         viewBox="0 0 7 12"
          fill="none"
          xmlns="http://www.w3.org/2000/svg"
       >
-         <path d="M5 6L19 6M10 12H19M14 18H19" stroke="#AFB2B6" strokeWidth="2" strokeLinecap="round"/>
+         <path d="M1 1L5 6L1 11" stroke="#AFB2B6" strokeWidth="2" strokeLinecap="round"/>
       </svg>
    );
 };

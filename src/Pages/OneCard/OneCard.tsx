@@ -1,12 +1,16 @@
 import classNames from "classnames";
-import React from "react";
-import { BookMarkIcon, ShareIcon } from "../../Assets";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router";
 import ButtonGroup from "../../Components/ButtonGroup";
-import Card from "../../Components/Card";
 import CardsList from "../../Components/CardsList";
 import Categories from "../../Components/Categories";
+import cardsSelectors from "../../Redux/Selectors/cardsSelectors";
+import { getSelectedCard } from "../../Redux/Reducers/CardsReducer";
+import { Theme } from "../../Constants/@types";
 
 import styles from "./OneCard.module.css";
+import { useThemeContext } from "../../Context/Theme";
 
 const MOCK_CARD = {
   id: 0,
@@ -20,30 +24,56 @@ const MOCK_CARD = {
 const MOCK_CARDS_LIST = [MOCK_CARD, MOCK_CARD];
 
 const OneCard = () => {
-  return (
+  const dispatch = useDispatch();
+  const params = useParams();
+  const { id } = params;
+
+  useEffect(() => {
+    if (id) {
+      dispatch(getSelectedCard(id));
+    }
+  }, [id]);
+
+  const card = useSelector(cardsSelectors.getSelectedCard);
+
+  const { theme } = useThemeContext();
+
+  return card ? (
     <>
       <div className={styles.container}>
+        <Categories />
         <div>
           <div className={styles.image}>
-            <img
-              src="https://thumbs.dfs.ivi.ru/storage29/contents/c/4/f3b4f712ab844ed3349bc9dede0e40.jpg"
-              alt="img"
-            />
+            <img src={card.image} alt="img" />
           </div>
-          <div className={styles.icons}>
+          <div
+            className={classNames(styles.icons, {
+              [styles.whiteTheme]: theme === Theme.Light,
+            })}
+          >
             <ButtonGroup />
           </div>
         </div>
-        <div className={styles.secondContainer}>
+        <div
+          className={classNames(styles.secondContainer, {
+            [styles.whiteTheme]: theme === Theme.Light,
+          })}
+        >
           <ul className={styles.genres}>
             <li className={styles.genre}>Adventure</li>
             <li className={styles.genre}>Action</li>
             <li className={styles.genre}>Fantasy</li>
           </ul>
 
-          <h3 className={styles.title}>Wonder Woman: 1984</h3>
-          <div className={styles.label} >
-            <span className={styles.raiting}>raiting</span>
+          <h3
+            className={classNames(styles.title, {
+              [styles.whiteTheme]: theme === Theme.Light,
+            })}
+          >
+            {card.title}
+          </h3>
+          <div className={styles.label}>
+            <span className={styles.raiting}>{card.rating}</span>
             <span className={styles.raitingImdb}>Imdb</span>
             <span className={styles.time}>136 min</span>
           </div>
@@ -89,7 +119,7 @@ const OneCard = () => {
         </div>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default OneCard;

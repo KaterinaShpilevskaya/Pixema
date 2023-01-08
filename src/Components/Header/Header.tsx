@@ -1,20 +1,21 @@
 import React, { useState, ChangeEvent } from "react";
-import { Logo } from "../../Assets";
+import { Logo, LogoBlack } from "../../Assets";
+import { useThemeContext } from "../../Context/Theme";
 import Search from "../Search";
-import User from "../User";
+import User from "../UserName";
 import styles from "./Header.module.css";
+import { Theme } from "../../Constants/@types";
+import classNames from "classnames";
 
 const Header = () => {
   const [inputValue, setInputValue] = useState("");
 
-  //   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-  //     onChange(event.target.value);
-  //   };
+  const { theme } = useThemeContext();
 
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
-        <Logo />
+      {theme === Theme.Light ? <LogoBlack /> : <Logo />}
       </div>
       <div>
         <Search

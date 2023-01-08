@@ -109,3 +109,10 @@ ul {
   font-weight: 36px;
   margin-bottom: 40px;
 }
+.whiteTheme {
+  color: #323537;
+}
+
+.whiteTheme::after {
+  background-color: #ffffff;
+}

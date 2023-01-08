@@ -8,11 +8,12 @@ import {
   TrendsIcon,
 } from "../../Assets";
 import classNames from "classnames";
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
   const { pathname } = useLocation();
   const navButtons = [
-    { name: "Home", icon: <HomeIcon />, link: "/" },
+    { name: "Home", icon:   <HomeIcon />, link: "/" },
     { name: "Trends", icon: <TrendsIcon />, link: "" },
     { name: "Favorites", icon: <FavoritesIcon />, link: "" },
     { name: "Settings", icon: <SettingsIcon />, link: "/settings" },
@@ -21,18 +22,18 @@ const Categories = () => {
   return (
     <>
       <div className={styles.container}>
-        {navButtons.map(({ link, name, icon }) => {
+        {navButtons.map(( item, index) => {
           return (
-            <NavLink
-              key={link}
-              to={link}
+            <Link
+              key={index}
+              to={item.link}
               className={classNames(styles.navButton, {
-                [styles.activeNavButton]: pathname === link,
+                [styles.activeNavButton]: pathname === item.link,
               })}
             >
-              {icon}
-              {name}
-            </NavLink>
+             <div>{item.icon}</div> 
+              {item.name}
+            </Link>
           );
         })}
       </div>
