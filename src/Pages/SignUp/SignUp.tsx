@@ -8,8 +8,8 @@ import { registerUser } from "../../Redux/Reducers/authReducer";
 import { NavLink, useNavigate } from "react-router-dom";
 import { PathNames } from "../Router/Router";
 
-const SignIn = () => {
-  const [name, setName] = useState("");
+const SignUp = () => {
+//   const [name, setName] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -21,8 +21,8 @@ const SignIn = () => {
   const onSignUp = () => {
    dispatch(
      registerUser({
-       data: { token_name: name, password, email: login },
-       callback: () => navigate(PathNames.SignIn, {
+       datas: { email: login, password, password_confirmation : confirmPassword, purchase_code:'' },
+       callback: () => navigate(PathNames.ResetPassword, {
          state: { email: login }
        }),
      })
@@ -42,14 +42,7 @@ const SignIn = () => {
     <FormContainer title={"Sign Up"}>
       <>
         <div className={styles.inputsContainer}>
-          <Input
-            title={"Name"}
-            value={name}
-            onChange={(value) => setName(value)}
-            placeholder={"Your name"}
-            ref={inputRef}
-          />
-
+        
           <Input
             title={"Email"}
             value={login}
@@ -90,4 +83,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
