@@ -3,18 +3,21 @@ import React, { FC, ReactElement } from "react";
 import styles from "./FormContainer.module.css";
 import { Logo }  from "../../Assets/logo/Logo";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 type FormContainerProps  = {
    title: string;
    children: ReactElement;
 };
 
-const FormContainer: React.FC<FormContainerProps> = ({ title, children }) => {
+const FormContainer: FC<FormContainerProps> = ({ title, children }) => {
    return (
       <div className={styles.container}>
 
          <div className={styles.logo}>
-            <Logo />
+         <Link to={'/'}>
+          <Logo />
+        </Link>
          </div>
 
          <div className={styles.formContainer}>

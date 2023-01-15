@@ -14,7 +14,7 @@ const CardsList: FC<CardsListProps> = ({ cardsList }) => {
       <Card card={cardsList[0]} />
 
       {cardsList.map((card, index) => {
-        if (index > 0 && index < 7) {
+        if (index > 0 && index < 50) {
           return <Card key={index} card={card} />;
         }
       })}

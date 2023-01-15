@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import themeReducer from "./Reducers/themeReducer";
-import cardsReducer from './Reducers/CardsReducer';
+import filmsReducer from './Reducers/filmsReducer';
 import authReducer from './Reducers/authReducer';
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './Sagas/rootSaga';
@@ -10,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = {
   themeReducer,
-  cardsReducer,
+  filmsReducer,
   authReducer
 }
 

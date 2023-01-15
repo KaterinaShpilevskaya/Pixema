@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, ReactElement } from "react";
+import React, { useState} from "react";
 
 import { useNavigate } from "react-router-dom";
 import { Theme } from "../../Constants/@types";
@@ -14,6 +14,7 @@ import { useThemeContext } from "../../Context/Theme";
 const SettingsPage = () => {
   const navigate = useNavigate();
   const { theme } = useThemeContext();
+  
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -51,7 +52,8 @@ const SettingsPage = () => {
                 <div className={classNames(styles.box, {
                 [styles.whiteTheme]: theme === Theme.Light,
                 [styles.whiteThemeBorder] : theme === Theme.Light
-            })}>{"a.lapitsky@gmail.com"}</div>
+            })}>{'email'}</div>
+            
               </div>
             </div>
           </div>

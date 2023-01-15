@@ -9,20 +9,19 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { PathNames } from "../Router/Router";
 
 const SignUp = () => {
-//   const [name, setName] = useState("");
+
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const onSignUp = () => {
    dispatch(
      registerUser({
        datas: { email: login, password, password_confirmation : confirmPassword, purchase_code:'' },
-       callback: () => navigate(PathNames.ResetPassword, {
+       callback: () => navigate(PathNames.SignIn, {
          state: { email: login }
        }),
      })

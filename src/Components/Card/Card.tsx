@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { CardType } from "../../Constants/@types";
 import classNames from "classnames";
-import { setSelectedCard } from "../../Redux/Reducers/CardsReducer";
+import { setSelectedFilm } from "../../Redux/Reducers/filmsReducer";
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../../Context/Theme";
 import { Theme } from "../../Constants/@types";
@@ -14,11 +14,11 @@ type CardProps = {
 };
 
 const Card: FC<CardProps> = ({ card }) => {
-  const { id, image, rating, title, genres } = card;
+  const { id, medium_cover_image, rating, title, genres } = card;
 
   const dispatch = useDispatch();
   const onCardClick = () => {
-    dispatch(setSelectedCard(card));
+    dispatch(setSelectedFilm(card));
   };
 
   const { theme } = useThemeContext();
@@ -35,11 +35,11 @@ const Card: FC<CardProps> = ({ card }) => {
         >
           {rating}
         </span>
-        <img className={styles.card} src={image} alt={""} />
+        <img className={styles.card} src={medium_cover_image} alt={""} />
         <div className={classNames(styles.title,{ 
       [styles.whiteTheme]: theme === Theme.Light
   })}>{title}</div>
-        <div className={styles.genres}>{genres}</div>
+        <div className={styles.genres}>{genres.join(" ▪ ")}</div>
       </Link>
     </div>
   );
