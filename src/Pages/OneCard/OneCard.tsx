@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import ButtonGroup from "../../Components/ButtonGroup";
 import Categories from "../../Components/Categories";
 import cardsSelectors from "../../Redux/Selectors/filmsSelectors";
-import { getSelectedFilm } from "../../Redux/Reducers/filmsReducer";
+import { getSelectedFilm, setCardsBookmarks } from "../../Redux/Reducers/filmsReducer";
 import { Theme } from "../../Constants/@types";
 
 
@@ -41,7 +41,11 @@ const OneCard = () => {
               [styles.whiteTheme]: theme === Theme.Light,
             })}
           >
-            <ButtonGroup />
+            <ButtonGroup onClick={() => {
+                    if (card) {
+                      dispatch(setCardsBookmarks(card));
+                    }
+                  }} />
           </div>
         </div>
         <div

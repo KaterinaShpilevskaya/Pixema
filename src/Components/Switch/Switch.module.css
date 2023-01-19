@@ -25,13 +25,14 @@
   cursor: pointer;
 }
 
-.darkSwitch {
+.lightSwitch {
     left: 2px;
     transition: all 0.5s;
+    
 }
 
-.whiteSwitch {
-    background-color: #80858b;
+.darkSwitch {
+  background-color: #80858b;
     transition: all 0.5s;
 }
 

@@ -4,4 +4,5 @@ import { RootState } from "../store";
 export default {
   getSelectedFilm: (state: RootState) => state.filmsReducer.selectedFilm,
   getAllFilms: (state: RootState) => state.filmsReducer.allFilms,
+  getBookmarksFilms: (state: RootState) => state.filmsReducer.filmsBookmarks,
 };

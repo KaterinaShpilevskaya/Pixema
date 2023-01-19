@@ -13,21 +13,22 @@ const Switch = () => {
   return (
     <div
       onClick={() => {
-        if (theme === Theme.Light) {
-          onChangeTheme(Theme.Dark);
-        } else {
+        if (theme === Theme.Dark) {
           onChangeTheme(Theme.Light);
+        } else {
+          onChangeTheme(Theme.Dark);
         }
       }}
-      className={classNames(styles.switcher,{ 
-        [styles.whiteSwitch]: theme === Theme.Light ,
-        [styles.disabledSwitch]: disabled,
-        
-    })}
+      className={classNames(styles.switcher, {
+        [styles.darkSwitch]: theme === Theme.Dark,
+      })}
     >
-      < div className={classNames(styles.circle,{ 
-          [styles.darkSwitch]: theme === Theme.Dark
-      })} />
+      <div
+        className={classNames(styles.circle, {
+          [styles.lightSwitch]: theme === Theme.Light,
+          [styles.disabledSwitch]: disabled,
+        })}
+      />
     </div>
   );
 };

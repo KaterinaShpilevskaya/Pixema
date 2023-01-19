@@ -15,7 +15,7 @@ type ButtonGroupProps = {
 };
 
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-   const { title, onClick, className, disabled } = props;
+   const { onClick, className, disabled } = props;
 
    const { theme } = useThemeContext();
 

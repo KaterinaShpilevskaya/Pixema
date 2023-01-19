@@ -25,19 +25,17 @@ export enum PathNames {
 const Router = () => {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path={PathNames.Home} element={<PagesWrapper />}>
-            <Route path={PathNames.Home} element={<Home />} />
-            <Route path={PathNames.Settings} element={ <SettingsPage />} />
-            <Route path={PathNames.OneCard} element={ <OneCard />} />
-          
-          {/* <Route path={PathNames.RegistrationConfirmation} element={<RegistrationConfirmation /> */}
+      <Routes>
+        <Route path={PathNames.Home} element={<PagesWrapper />}>
+          <Route path={PathNames.Home} element={<Home />} />
+          <Route path={PathNames.Settings} element={<SettingsPage />} />
+          <Route path={PathNames.OneCard} element={<OneCard />} />
         </Route>
         <Route path={PathNames.SignIn} element={<SignIn />} />
         <Route path={PathNames.SignUp} element={<SignUp />} />
         <Route path={PathNames.ResetPassword} element={<ResetPassword />} />
         <Route path={PathNames.NewPassword} element={<NewPassword />} />
-        </Routes>
+      </Routes>
     </BrowserRouter>
   );
 };
