@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Favorites from "../Favorites";
 import Home from "../Home";
 import NewPassword from "../NewPassword";
 import OneCard from "../OneCard";
@@ -9,6 +10,7 @@ import ResetPassword from "../ResetPassword";
 import SettingsPage from "../SettingsPage";
 import SignIn from "../SignIn";
 import SignUp from "../SignUp";
+import Trends from "../Trends";
 
 export enum PathNames {
   Home = "/",
@@ -30,11 +32,13 @@ const Router = () => {
           <Route path={PathNames.Home} element={<Home />} />
           <Route path={PathNames.Settings} element={<SettingsPage />} />
           <Route path={PathNames.OneCard} element={<OneCard />} />
+          <Route path={PathNames.Trends} element={<Trends />} />
+          <Route path={PathNames.Favorites} element={<Favorites />} />
         </Route>
-        <Route path={PathNames.SignIn} element={<SignIn />} />
-        <Route path={PathNames.SignUp} element={<SignUp />} />
-        <Route path={PathNames.ResetPassword} element={<ResetPassword />} />
-        <Route path={PathNames.NewPassword} element={<NewPassword />} />
+          <Route path={PathNames.SignIn} element={<SignIn />} />
+          <Route path={PathNames.SignUp} element={<SignUp />} />
+          <Route path={PathNames.ResetPassword} element={<ResetPassword />} />
+          <Route path={PathNames.NewPassword} element={<NewPassword />} />
       </Routes>
     </BrowserRouter>
   );

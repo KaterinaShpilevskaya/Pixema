@@ -36,9 +36,13 @@ const Card: FC<CardProps> = ({ card }) => {
           {rating}
         </span>
         <img className={styles.card} src={medium_cover_image} alt={""} />
-        <div className={classNames(styles.title,{ 
-      [styles.whiteTheme]: theme === Theme.Light
-  })}>{title}</div>
+        <div
+          className={classNames(styles.title, {
+            [styles.whiteTheme]: theme === Theme.Light,
+          })}
+        >
+          {title}
+        </div>
         <div className={styles.genres}>{genres.join(" ▪ ")}</div>
       </Link>
     </div>

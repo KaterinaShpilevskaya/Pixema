@@ -8,15 +8,19 @@ import styles from "./PagesWrapper.module.css";
 import { Theme } from "../../Constants/@types";
 
 const PagesWrapper = () => {
-    const {theme} = useThemeContext()
-    
-    return (
-        <div className={classNames(styles.container, {[styles.darkContainer] : theme === Theme.Dark})}>
-            <Header />
-            <Outlet />
-            <Footer />
-        </div>
-    )
-}
+  const { theme } = useThemeContext();
+
+  return (
+    <div
+      className={classNames(styles.container, {
+        [styles.darkContainer]: theme === Theme.Dark,
+      })}
+    >
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
 export default PagesWrapper;

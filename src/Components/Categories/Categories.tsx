@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React from "react";
 import styles from "./Categories.module.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   FavoritesIcon,
   HomeIcon,
@@ -8,21 +8,21 @@ import {
   TrendsIcon,
 } from "../../Assets";
 import classNames from "classnames";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const { pathname } = useLocation();
   const navButtons = [
-    { name: "Home", icon:   <HomeIcon />, link: "/" },
-    { name: "Trends", icon: <TrendsIcon />, link: "" },
-    { name: "Favorites", icon: <FavoritesIcon />, link: "" },
+    { name: "Home", icon: <HomeIcon />, link: "/" },
+    { name: "Trends", icon: <TrendsIcon />, link: "/trends" },
+    { name: "Favorites", icon: <FavoritesIcon />, link: "/favorites" },
     { name: "Settings", icon: <SettingsIcon />, link: "/settings" },
   ];
 
   return (
     <>
       <div className={styles.container}>
-        {navButtons.map(( item, index) => {
+        {navButtons.map((item, index) => {
           return (
             <Link
               key={index}
@@ -31,7 +31,7 @@ const Categories = () => {
                 [styles.activeNavButton]: pathname === item.link,
               })}
             >
-             <div>{item.icon}</div> 
+              <div>{item.icon}</div>
               {item.name}
             </Link>
           );

@@ -5,9 +5,11 @@ import { useParams } from "react-router";
 import ButtonGroup from "../../Components/ButtonGroup";
 import Categories from "../../Components/Categories";
 import cardsSelectors from "../../Redux/Selectors/filmsSelectors";
-import { getSelectedFilm, setCardsBookmarks } from "../../Redux/Reducers/filmsReducer";
+import {
+  getSelectedFilm,
+  setFilmsFavorites,
+} from "../../Redux/Reducers/filmsReducer";
 import { Theme } from "../../Constants/@types";
-
 
 import styles from "./OneCard.module.css";
 import { useThemeContext } from "../../Context/Theme";
@@ -22,7 +24,6 @@ const OneCard = () => {
       dispatch(getSelectedFilm(id));
     }
   }, [dispatch, id]);
-
 
   const card = useSelector(cardsSelectors.getSelectedFilm);
 
@@ -41,11 +42,13 @@ const OneCard = () => {
               [styles.whiteTheme]: theme === Theme.Light,
             })}
           >
-            <ButtonGroup onClick={() => {
-                    if (card) {
-                      dispatch(setCardsBookmarks(card));
-                    }
-                  }} />
+            <ButtonGroup
+              onClick={() => {
+                if (card) {
+                  dispatch(setFilmsFavorites(card));
+                }
+              }}
+            />
           </div>
         </div>
         <div
@@ -70,9 +73,7 @@ const OneCard = () => {
             <span className={styles.raitingImdb}>Imdb</span>
             <span className={styles.time}>136 min</span>
           </div>
-          <p className={styles.description}>
-            {card.description_full}
-          </p>
+          <p className={styles.description}>{card.description_full}</p>
 
           <div className={styles.containerList}>
             <ul className={styles.leftList}>
@@ -98,9 +99,7 @@ const OneCard = () => {
           </div>
           <div className={styles.therdContainer}>
             <div className={styles.recomendations}>Recomendations</div>
-            <div className={styles.cards}>
-              
-            </div>
+            <div className={styles.cards}></div>
           </div>
         </div>
       </div>

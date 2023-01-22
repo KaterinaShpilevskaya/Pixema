@@ -1,46 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
 import FormContainer from "../../Components/FormContainer";
 import Input from "../../Components/Input";
-import Button, {ButtonTypes} from "../../Components/Button";
+import Button, { ButtonTypes } from "../../Components/Button";
 
 import styles from "./ResetPassword.module.css";
 
 const ResetPassword = () => {
+  const [login, setLogin] = useState("");
 
-   const [login, setLogin] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null);
 
-   const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
-   useEffect(() => {
-      if (inputRef.current) {
-         inputRef.current.focus();
-      }
-      }, []);
-   
-   return (
-      <FormContainer title={"Reset password"}>
-            <>
+  return (
+    <FormContainer title={"Reset password"}>
+      <>
+        <div className={styles.inputsContainer}>
+          <Input
+            title={"Email"}
+            value={login}
+            onChange={(value) => setLogin(value)}
+            placeholder={"Your email"}
+            ref={inputRef}
+          />
+        </div>
 
-            <div className={styles.inputsContainer}>
-               <Input
-                  title={"Email"}
-                  value={login}
-                  onChange={(value) => setLogin(value)}
-                  placeholder={"Your email"}
-                  ref={inputRef}
-               />
-            </div>
-
-               <Button
-                  className={styles.button}
-                  title={"Reset"}
-                  type={ButtonTypes.Primary}
-                  onClick={() => {}}
-               />
-            </>
-      </FormContainer>
-
-   );
+        <Button
+          className={styles.button}
+          title={"Reset"}
+          type={ButtonTypes.Primary}
+          onClick={() => {}}
+        />
+      </>
+    </FormContainer>
+  );
 };
 
 export default ResetPassword;

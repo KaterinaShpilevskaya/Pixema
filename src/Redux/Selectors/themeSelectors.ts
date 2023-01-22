@@ -1,5 +1,5 @@
-import { RootState } from '../store';
+import { RootState } from "../store";
 
 export default {
-    getTheme: ( state: RootState) => state.themeReducer.theme 
-}
+  getTheme: (state: RootState) => state.themeReducer.theme,
+};

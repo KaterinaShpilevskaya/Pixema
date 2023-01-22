@@ -9,7 +9,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { PathNames } from "../Router/Router";
 
 const SignUp = () => {
-
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,16 +17,21 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSignUp = () => {
-   dispatch(
-     registerUser({
-       datas: { email: login, password, password_confirmation : confirmPassword, purchase_code:'' },
-       callback: () => navigate(PathNames.SignIn, {
-         state: { email: login }
-       }),
-     })
-   );
- };
-
+    dispatch(
+      registerUser({
+        datas: {
+          email: login,
+          password,
+          password_confirmation: confirmPassword,
+          purchase_code: "",
+        },
+        callback: () =>
+          navigate(PathNames.SignIn, {
+            state: { email: login },
+          }),
+      })
+    );
+  };
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -41,7 +45,6 @@ const SignUp = () => {
     <FormContainer title={"Sign Up"}>
       <>
         <div className={styles.inputsContainer}>
-        
           <Input
             title={"Email"}
             value={login}

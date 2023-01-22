@@ -4,13 +4,13 @@ import { CardType, CardsListType } from "../../Constants/@types";
 type FilmsReducerState = {
   selectedFilm: CardType | null;
   allFilms: CardsListType;
-  filmsBookmarks: CardType[];
+  filmsFavorites: CardType[];
 };
 
 const initialState: FilmsReducerState = {
   selectedFilm: null,
   allFilms: [],
-  filmsBookmarks: [],
+  filmsFavorites: [],
 };
 
 const filmsSlice = createSlice({
@@ -25,15 +25,15 @@ const filmsSlice = createSlice({
     setFilms: (state, action: PayloadAction<CardsListType>) => {
       state.allFilms = action.payload;
     },
-    setCardsBookmarks: (state, actions: PayloadAction<CardType>) => {
+    setFilmsFavorites: (state, actions: PayloadAction<CardType>) => {
       const card = actions.payload;
-      const cardsBookmarkIndex = state.filmsBookmarks.findIndex(
+      const filmsFavoritesIndex = state.filmsFavorites.findIndex(
         (value) => value.id === card.id
       );
-      if (cardsBookmarkIndex === -1) {
-        state.filmsBookmarks.push(card);
+      if (filmsFavoritesIndex === -1) {
+        state.filmsFavorites.push(card);
       } else {
-        state.filmsBookmarks.splice(cardsBookmarkIndex);
+        state.filmsFavorites.splice(filmsFavoritesIndex);
       }
     },
   },
@@ -44,7 +44,7 @@ export const {
   getSelectedFilm,
   getFilms,
   setFilms,
-  setCardsBookmarks,
+  setFilmsFavorites,
 } = filmsSlice.actions;
 const filmsReducer = filmsSlice.reducer;
 

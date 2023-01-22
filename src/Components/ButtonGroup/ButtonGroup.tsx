@@ -8,36 +8,40 @@ import { useThemeContext } from "../../Context/Theme";
 import { Theme } from "../../Constants/@types";
 
 type ButtonGroupProps = {
-   title?: ReactElement;
-   onClick?: () => void;
-   className?: string;
-   disabled?: boolean;
+  title?: ReactElement;
+  onClick?: () => void;
+  className?: string;
+  disabled?: boolean;
 };
 
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-   const { onClick, className, disabled } = props;
+  const { onClick, className, disabled } = props;
 
-   const { theme } = useThemeContext();
+  const { theme } = useThemeContext();
 
-   return (
-      <div className={styles.ButtonGroup}>
+  return (
+    <div className={styles.ButtonGroup}>
+      <div
+        className={classNames(styles.button, styles.rightButton, className, {
+          [styles.disabled]: !!disabled,
+          [styles.whiteTheme]: theme === Theme.Light,
+        })}
+        onClick={onClick}
+      >
+        {<BookMarkIcon />}
+      </div>
 
       <div
-         className={classNames(styles.button, styles.rightButton, className, {[styles.disabled]: !!disabled, [styles.whiteTheme]: theme === Theme.Light})}
-         onClick={onClick}
+        className={classNames(styles.button, styles.leftButton, className, {
+          [styles.disabled]: !!disabled,
+          [styles.whiteTheme]: theme === Theme.Light,
+        })}
+        onClick={onClick}
       >
-         {<BookMarkIcon />}
+        {<ShareIcon />}
       </div>
-
-      <div
-         className={classNames(styles.button, styles.leftButton, className, {[styles.disabled]: !!disabled, [styles.whiteTheme]: theme === Theme.Light})}
-         onClick={onClick}
-      >
-      {<ShareIcon />}
-      </div>
-
-      </div>
-   );
+    </div>
+  );
 };
 
 export default ButtonGroup;
