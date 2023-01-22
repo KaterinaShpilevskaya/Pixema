@@ -5,4 +5,5 @@ export default {
   getSelectedFilm: (state: RootState) => state.filmsReducer.selectedFilm,
   getAllFilms: (state: RootState) => state.filmsReducer.allFilms,
   getBookmarksFilms: (state: RootState) => state.filmsReducer.filmsFavorites,
+  getSearchValue: (state: RootState) => state.filmsReducer.searchValue,
 };

@@ -5,12 +5,14 @@ type FilmsReducerState = {
   selectedFilm: CardType | null;
   allFilms: CardsListType;
   filmsFavorites: CardType[];
+  searchValue: string;
 };
 
 const initialState: FilmsReducerState = {
   selectedFilm: null,
   allFilms: [],
   filmsFavorites: [],
+  searchValue: '',
 };
 
 const filmsSlice = createSlice({
@@ -36,6 +38,9 @@ const filmsSlice = createSlice({
         state.filmsFavorites.splice(filmsFavoritesIndex);
       }
     },
+    setSearchValue: (state, actions: PayloadAction<string>) => {
+        state.searchValue = actions.payload;
+      },
   },
 });
 
@@ -45,6 +50,7 @@ export const {
   getFilms,
   setFilms,
   setFilmsFavorites,
+  setSearchValue
 } = filmsSlice.actions;
 const filmsReducer = filmsSlice.reducer;
 

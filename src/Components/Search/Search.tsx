@@ -1,4 +1,4 @@
-import React, { FC, useState, ChangeEvent, forwardRef } from "react";
+import React, {  forwardRef } from "react";
 
 import classNames from "classnames";
 import styles from "./Search.module.css";
@@ -18,11 +18,9 @@ type SearchProps = {
 
 const Search = forwardRef<HTMLInputElement, SearchProps>((props, ref) => {
   const {
-    value,
     // onChange,
     disabled,
     filters,
-    className,
   } = props;
 
   const { theme } = useThemeContext();

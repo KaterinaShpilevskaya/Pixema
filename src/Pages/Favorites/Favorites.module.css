@@ -1,0 +1,7 @@
+.container{
+    min-height: 67vh;
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+    position: relative;
+}

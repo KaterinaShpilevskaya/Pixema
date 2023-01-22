@@ -32,3 +32,8 @@ export enum Theme {
   Light = "light",
   Dark = "dark",
 }
+
+export enum Tabs {
+  Favorites = "Favorites",
+  Trends = "Trends",
+}
